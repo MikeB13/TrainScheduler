@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Train Scheduler</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- firebase added -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <!-- moment.js link -->
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid" id="test">
+        <div class="overlay">
+            <div class="text">Choo Choo!</div>
+        </div>
+        <div class="container">
+            <h1 class="display-3">It's ShowTimeTrain Time</h1>
+            <p class="lead">Train arrival and departure information.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Current Train Schedule -->
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Train Information</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover" id='train-table'>
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Destination</th>
+                                    <th>Frequency (min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--table rows dynamically generated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--Add Train-->
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Add Train</strong></h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <!-- Entry Form -->
+                        <form>
+                            <div class="form-group">
+                                <label for="train-name-input">Train Name</label>
+                                <input class="form-control" id="train-name-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="first-train-input">First Train Time</label>
+                                <input class="form-control" id="first-train-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" type="text">
+                            </div>
+                            <button class="btn btn-warning" id="add-train-btn" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="train.js"></script>
+</body>
+
+</html>
